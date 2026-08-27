@@ -1,4 +1,4 @@
-from helper import is_input_digit
+from .helper import is_input_digit
 
 def deposit():
   while True:
