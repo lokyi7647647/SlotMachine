@@ -4,6 +4,7 @@ from io import StringIO
 from ...src.bet import get_bet
 
 def test_bet_valid(monkeypatch):
+  # mocking stdin to allow get_bet() to read input
   monkeypatch.setattr("sys.stdin", StringIO('10'))
   assert get_bet(100) == 10
 
