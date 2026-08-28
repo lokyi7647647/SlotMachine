@@ -14,7 +14,10 @@ def test_get_bet_valid(monkeypatch, capsys, balance_and_bet):
   balance, bet_amount = balance_and_bet
   get_bet_lines(balance, bet_amount)
   captured = capsys.readouterr()
-  assert captured.out == "Enter lines to bet on (1-3), separated by spaces (eg. 1 2): You are betting $6 on the lines 1 2 3\n"
+  assert captured.out == (
+    "Enter lines to bet on (1-3), separated by spaces (eg. 1 2): "
+    "You are betting $6 on the lines 1 2 3\n"
+  )
 
 def test_get_bet_invalid_zeroth_line(monkeypatch, capsys, balance_and_bet):
   # slot machine can only have line 1 to 3, line 0 is in valid
@@ -76,4 +79,7 @@ def test_total_bet_equals_balance(monkeypatch, capsys):
   get_bet_lines(balance, bet_amount)
   captured = capsys.readouterr()
   # two lines (i.e 1 2), each cost $6, so a total bet is $10
-  assert captured.out == "Enter lines to bet on (1-3), separated by spaces (eg. 1 2): You are betting $10 on the lines 1 2\n"
+  assert captured.out == (
+  "Enter lines to bet on (1-3), separated by spaces (eg. 1 2): "
+  "You are betting $10 on the lines 1 2\n"
+  )
