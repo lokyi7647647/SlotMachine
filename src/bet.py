@@ -1,4 +1,5 @@
-from helper import is_input_digit
+from .helper import is_input_digit
+import sys
 
 def get_bet(balance):
   while True:
@@ -8,7 +9,7 @@ def get_bet(balance):
     # what if bet amount is greater then balance
     bet_amount = int(bet_amount)
     if bet_amount > balance:
-      print(f"You bet amount of ${bet_amount} exceeds your balance of ${balance}")
+      print(f"Your bet amount of ${bet_amount} exceeds your balance of ${balance}", file=sys.stderr)
       continue
     break
   
