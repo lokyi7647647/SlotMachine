@@ -80,6 +80,6 @@ def test_total_bet_equals_balance(monkeypatch, capsys):
   captured = capsys.readouterr()
   # two lines (i.e 1 2), each cost $6, so a total bet is $10
   assert captured.out == (
-  "Enter lines to bet on (1-3), separated by spaces (eg. 1 2): "
-  "You are betting $10 on the lines 1 2\n"
+    "Enter lines to bet on (1-3), separated by spaces (eg. 1 2): "
+    "You are betting $10 on the lines 1 2\n"
   )
