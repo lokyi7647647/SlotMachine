@@ -8,13 +8,13 @@ def is_lines_valid(list_of_lines):
   set_of_non_duplicates = set()
   for line in list_of_lines:
     if line in set_of_non_duplicates:
-      print(f"Entered the line {line} more than once", file=sys.stderr)
+      print(f"Entered the line '{line}' more than once", file=sys.stderr)
       continue
     elif int(line) == 0:
-      print(f"Line 0 is invalid. Lines need to be starting from 1", file=sys.stderr)
+      print(f"Line '0' is invalid. Lines need to be starting from '1'", file=sys.stderr)
       return False
     elif int(line) > ROWS:
-      print(f"The line {line} entered exceeds the capacity of at most line {ROWS}", file=sys.stderr)
+      print(f"The line '{line}' entered exceeds the maximum available line, which is '{ROWS}'", file=sys.stderr)
       return False
     set_of_non_duplicates.add(line)
   return True

@@ -1,10 +1,12 @@
-import pytest
+"""Test output for valid and invalid bet amount per line"""
 
+import pytest
 from io import StringIO
 from ...src.bet import get_bet
 
 def test_bet_valid(monkeypatch):
-  # mocking stdin to allow get_bet() to read input
+  # Mock stdin for reading betting amount per line
+  # by creating a file-like object and setting its content to the desired input
   monkeypatch.setattr("sys.stdin", StringIO('10'))
   assert get_bet(100) == 10
 

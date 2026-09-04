@@ -1,9 +1,13 @@
+"""Test output for valid and invalid deposit"""
+
 from io import StringIO
 import pytest
 from ...src.deposit import deposit
 
 
 def test_deposit_valid(monkeypatch):
+  # Mock stdin for reading the deposit amount
+  # by creating a file-like object and setting its content to the desired input
   monkeypatch.setattr("sys.stdin", StringIO('1'))
   assert deposit() == 1
 
