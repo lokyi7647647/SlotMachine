@@ -7,8 +7,8 @@ COLS = 3
 symbol_count = {
   "thumbs_up": 2,
   "grinning_face" : 1,
-  "star-struck" : 1,
-  "smiling_face_with_open_hands": 1
+  # "star-struck" : 1,
+  # "smiling_face_with_open_hands": 1
 }
 
 symbol_value = {
@@ -29,7 +29,6 @@ def print_spin(matrix):
 def spin(list_of_lines, balance, bet_amount, total_bet_amount):
   all_possible_emojis = [emoji.emojize(f":{symbol}:") for symbol, freq in symbol_count.items() for _ in range(freq)]
   matrix = [random.sample(all_possible_emojis, k=ROWS) for _ in range(COLS)]
-  
   # determine if there is a win
   global winning_lines
   winning_lines = []
